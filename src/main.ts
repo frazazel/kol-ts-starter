@@ -1,13 +1,14 @@
-import { myMp, print } from "kolmafia";
-
-export function checkMP(): string {
-  if (myMp() < 200) {
-    return "Your MP is less than 200.";
-  } else {
-    return "Your MP is greater than or equal to 200.";
-  }
-}
+import { runChoice } from "kolmafia";
+import { $class, $item, ascend, Lifestyle, Paths } from "libram";
 
 export function main(): void {
-  print(checkMP());
+  ascend(
+    Paths.GreyYou,
+    $class`Grey Goo`,
+    Lifestyle.softcore,
+    "vole",
+    $item`astral six-pack`,
+    $item`astral pet sweater`
+  );
+  runChoice(1);
 }
