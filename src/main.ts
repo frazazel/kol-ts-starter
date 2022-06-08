@@ -1,5 +1,5 @@
-import { runChoice } from "kolmafia";
-import { $class, $item, ascend, Lifestyle, Paths } from "libram";
+import { runChoice, visitUrl } from "kolmafia";
+import { $class, $item, ascend, Lifestyle, Paths, set } from "libram";
 
 export function main(): void {
   ascend(
@@ -10,5 +10,8 @@ export function main(): void {
     $item`astral six-pack`,
     $item`astral pet sweater`
   );
-  runChoice(1);
+
+  set("choiceAdventure1464", 1);
+  if (visitUrl("main.php").includes("somewhat-human-shaped mass of grey goo nanites"))
+    runChoice(-1);
 }
